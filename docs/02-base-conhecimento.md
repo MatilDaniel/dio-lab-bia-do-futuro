@@ -25,7 +25,7 @@ O produto Fundo imobiliario (FIIs) substituiu o fundo Multimercado.
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-"""python
+```python
 
 import pandas as pd 
 import json
@@ -40,13 +40,13 @@ with open('data/perfil_investidor.json', 'r', encoding - 'utf-8') as f:
 
 with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
   produtos = json.load(f)
-"""
+```
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
 Para simplificar podemos simplismente "injetar" os dados no nosso prompt, garantindo que o Agente tenha o melhor contexto possível. Lembrando que, em soluções mais robustas o ideal é que essas informações sejam carregadas dinamicamente para que possamos ganhar flexibilidade. 
-'''text
+```text
 DADOS DO CLIENTE E PERFIL(data/perfil_investidor.json):
 {
   "nome": "João Silva",
@@ -140,7 +140,7 @@ PRODUTOS DISPONIVEIS PARA ENSINO(data/produtos_financeiros.json):
   }
 ]
 
-'''
+```
 
 ---
 
