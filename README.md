@@ -1,149 +1,94 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💰 EDU — Educador Financeiro com IA Generativa
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> Agente financeiro inteligente que antecipa necessidades, personaliza sugestões e orienta o usuário de forma consultiva e segura.
 
 ---
 
-## O Que Você Deve Entregar
+## 🎯 Sobre o Projeto
 
-### 1. Documentação do Agente
+**Edu** é um agente de educação financeira desenvolvido com IA Generativa como solução para o laboratório da [DIO](https://www.dio.me/). O objetivo é oferecer uma experiência de consultoria financeira acessível, personalizada e confiável — indo além dos chatbots reativos tradicionais.
 
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+**Problema resolvido:** Muitas pessoas não mantêm controle financeiro por falta de orientação prática e personalizada. A Bia atua como uma consultora proativa, guiando o usuário em decisões de gastos, metas e investimentos.
 
 ---
 
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 🏗️ Arquitetura da Solução
 
 ```
-📁 lab-agente-financeiro/
+📁 dio-lab-bia-do-futuro/
 │
-├── 📄 README.md
+├── 📁 src/          # Aplicação principal (Python)
+│   └── app.py       # Chatbot interativo com LLM
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── 📁 data/         # Base de conhecimento (dados mockados)
+│   ├── transacoes.csv
+│   ├── historico_atendimento.csv
+│   ├── perfil_investidor.json
+│   └── produtos_financeiros.json
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── 📁 docs/         # Documentação técnica
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── 📁 assets/       # Diagramas e imagens
+└── 📁 examples/     # Referências de implementação
 ```
 
 ---
 
-## Dicas Finais
+## 🤖 Funcionalidades do Agente
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+- **Análise de perfil** — lê o perfil do investidor e histórico de transações para personalizar respostas
+- **Orientação proativa** — sugere ações antes de o usuário perguntar
+- **Consulta a produtos financeiros** — recomenda produtos alinhados ao perfil do cliente
+- **Respostas seguras** — sistema anti-alucinação com base em dados confiáveis
+- **Histórico contextual** — utiliza atendimentos anteriores para manter continuidade
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+| Camada | Tecnologia |
+|---|---|
+| LLM | Claude / OpenAI API |
+| Interface | Python (Streamlit / CLI) |
+| Dados | CSV + JSON (dados mockados) |
+| Orquestração | LangChain | PYTHON
+
+---
+
+## 🚀 Como Executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/MatilDaniel/dio-lab-bia-do-futuro.git
+cd dio-lab-bia-do-futuro
+
+# Instale as dependências
+pip install -r requirements.txt
+
+# Execute o agente
+python src/app.py
+```
+
+---
+
+## 📊 Métricas de Avaliação
+
+- ✅ Precisão das respostas financeiras
+- ✅ Taxa de respostas sem alucinação
+- ✅ Coerência com o perfil do cliente
+- ✅ Satisfação simulada do usuário
+
+Detalhes em [`docs/04-metricas.md`](./docs/04-metricas.md).
+
+---
+
+## 👤 Autor
+
+**Daniel Matil** — Desenvolvido como solução para o laboratório *Bia do Futuro* da DIO.
+
+[![GitHub](https://img.shields.io/badge/GitHub-MatilDaniel-181717?style=flat&logo=github)](https://github.com/MatilDaniel)
